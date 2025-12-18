@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>용해도 곡선 가상 실험</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="graph-section">
+            <canvas id="graphCanvas"></canvas>
+        </div>
+
+        <div class="control-section">
+            <div class="beaker-area">
+                <canvas id="beakerCanvas"></canvas>
+                <div id="statusText">상태: 용해 중...</div>
+            </div>
+
+            <div class="controls">
+                <label>물질 선택:
+                    <select id="substance">
+                        <option value="NaNO3">질산 나트륨 (NaNO3)</option>
+                        <option value="KNO3" selected>질산 칼륨 (KNO3)</option>
+                        <option value="CuSO4">황산구리(II) (CuSO4)</option>
+                        <option value="NaCl">염화 나트륨 (NaCl)</option>
+                    </select>
+                </label>
+
+                <div class="slider-group">
+                    <label>온도 (°C): <span id="tempVal">20</span></label>
+                    <input type="range" id="temp" min="0" max="100" value="20">
+                    
+                    <label>용매(물)의 양 (g): <span id="waterVal">100</span></label>
+                    <input type="range" id="water" min="10" max="200" value="100">
+                    
+                    <label>용질의 양 (g): <span id="soluteVal">30</span></label>
+                    <input type="range" id="solute" min="0" max="250" value="30">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
